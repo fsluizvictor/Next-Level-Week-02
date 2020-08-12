@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsnd --tranpile-only --ignore-watch node-modules --respawn src/server.ts"
+    "start": "tsnd --tranpile-only --ignore-watch node-modules --respawn src/server.ts",
+    "knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
+    "knex:migrate:rollback": "knex --knexfile knexfile.ts migrate:latest:rollback",
+    "": ""
   },
   "keywords": [],
   "author": "",
@@ -13,5 +16,9 @@
     "@types/express": "^4.17.7",
     "ts-node-dev": "^1.0.0-pre.56",
     "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "knex": "^0.21.4",
+    "sqlite3": "^5.0.0"
   }
 }
